@@ -13,4 +13,9 @@
         });
         $($(e.relatedTarget).data("target")).removeClass('active');
     });
+
+    $.get('mainData.html', function(data) {
+    $('#home').html(data);
+  });
+    //$("#home" ).load("mainData.html" );
 })(jQuery);
