@@ -2,98 +2,78 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="main.css">
-
     <title>Crypto Amos</title>
 </head>
 
 <body>
     <div class="continar">
-
         <div class="parallax">
-
             <h1 class="main-title text-center">Amos Crypto</h1>
-
+            <hr />
             <div class="container-fluid ">
-                <div class="row">
-                    <div class="col-lg-12">
-
-                        <!-- Tab pane -->
-                        <ul class="nav nav-tabs flex-row " role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="Home"
-                                    data-target="#home">Home</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-toggle="tab" role="tab" aria-controls="reports"
-                                    data-target="#reports">Reports</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-toggle="tab" role="tab" aria-controls="about"
-                                    data-target="#about">About</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- Carousel Pane -->
-                            <div class="tab-content">
-                                <div class="tab-pane fade" role="tabpanel" id="home">
-                                   
-                                </div>
-                                <div class="tab-pane fade" role="tabpanel" id="reports">
-                                    hello
-                                </div>
-                                <div class="tab-pane fade" role="tabpanel" id="about">
-                                    
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
+                <div class="col-lg-12">
+                    <button type="button" class="btn btn-primary" id="home">Home</button>
+                    <button type="button" class="btn btn-primary" id="reports">Reports</button>
+                    <button type="button" class="btn btn-primary" id="about">About</button>
+                    <div class="tab-content" id="content"></div>
                 </div>
-
-            </div><!-- /.container -->
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some example text. Some example text.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
             </div>
         </div>
-
-
-
     </div>
 
 
 
+    <!-- Modal -->
+    <div id="modal" class="modal fade" id="exampleModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Only 5 items</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="modal-body" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button id="modal-save-button" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+    <script id="home_template" type="text/template">
+        <div id="home_content">Loading... please wait.</div>
+    </script>
+    <script id="reports_template" type="text/template">
+        <div id="reports_template">
+            <div id="chartContainer"></div>
+        </div>
+    </script>
+    <script id="about_template" type="text/template">
+        <div id="about_template">
+            <img src="Content/AmosImage.jpg" alt="Smiley face" id="AmosIMG">
+            <h3>Crypto Live Reports</h3>
+            <div>by Amos Shukron</div>
+        </div>
+    </script>
 
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="reports.js" type="application/javascript"></script>
+    <script src="home.js" type="application/javascript"></script>
     <script src="main.js" type="application/javascript"></script>
+
 </body>
 
 </html>
